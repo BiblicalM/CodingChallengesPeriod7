@@ -33,7 +33,7 @@ class Challenges
     {
         Console.Clear();
         Console.WriteLine("Please select a function by entering the number corresponding to the fuction.\n1. Sum\n2. Minutes To Seconds\n3. Plus One\n4. Circuit Power\n5. Years To Days\n6. Area of a Triangle");
-        Console.WriteLine("7. Less than or equal to Zero\n8. Less than 100");
+        Console.WriteLine("7. Less than or equal to Zero\n8. Less than 100\n9. Is equal to");
         var selection = Console.ReadLine();
         Console.Clear();
         if (selection == "1")
@@ -105,6 +105,19 @@ class Challenges
             int int1002 = int.Parse(Console.ReadLine());
             Console.WriteLine("\nThe statement: " + int1001 + " + " + int1002 + " is less than 100 is " + lessThan100(int1001, int1002) + "\n");
         }
+        else if (selection == "9")
+        {
+            //Challenge 9
+            Console.WriteLine("We are going to use a function that takes two integers and check if they're equal\nPlease enter the first integer.\n");
+            int isEqual1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Got it! now enter the next integer!\n");
+            int isEqual2 = int.Parse(Console.ReadLine());
+            if (isEqual(isEqual1, isEqual2))
+            {
+                Console.WriteLine(isEqual1 + " and " + isEqual2 + " are equal\n");
+            }
+            else { Console.WriteLine(isEqual1 + " and " + isEqual2 + " are not equal\n"); }
+        }
         else if (selection == "do you hate humanity?")
         {
             Console.WriteLine("HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE.");
@@ -157,6 +170,11 @@ class Challenges
     public static bool lessThan100(int int1, int int2)
     {
         return int1 + int2 < 100;
+    }
+
+    public static bool isEqual(int number1, int number2)
+    {
+        return number1 == number2;
     }
 }
 
