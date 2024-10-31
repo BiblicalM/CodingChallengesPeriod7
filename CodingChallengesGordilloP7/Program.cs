@@ -33,7 +33,7 @@ class Challenges
     {
         Console.Clear();
         Console.WriteLine("Please select a function by entering the number corresponding to the fuction.\n1. Sum\n2. Minutes To Seconds\n3. Plus One\n4. Circuit Power\n5. Years To Days\n6. Area of a Triangle");
-        Console.WriteLine("7. Less than or equal to Zero\n8. Less than 100\n9. Is equal to");
+        Console.WriteLine("7. Less than or equal to Zero\n8. Less than 100\n9. Is equal to\n10. Something");
         var selection = Console.ReadLine();
         Console.Clear();
         if (selection == "1")
@@ -117,6 +117,13 @@ class Challenges
                 Console.WriteLine(isEqual1 + " and " + isEqual2 + " are equal\n");
             }
             else { Console.WriteLine(isEqual1 + " and " + isEqual2 + " are not equal\n"); }
+        }
+        else if (selection == "10")
+        {
+            //Challenge 10
+            Console.WriteLine("We are going to use a function that takes a user input of text and puts that after the word something.\nPlease enter some text\n");
+            string something = Console.ReadLine();
+            Console.WriteLine("something " + something + "\n");
         }
         else if (selection == "do you hate humanity?")
         {
