@@ -33,7 +33,7 @@ class Challenges
     {
         Console.Clear();
         Console.WriteLine("Please select a function by entering the number corresponding to the fuction.\n1. Sum\n2. Minutes To Seconds\n3. Plus One\n4. Circuit Power\n5. Years To Days\n6. Area of a Triangle");
-        Console.WriteLine("7. Less than or equal to Zero\n8. Less than 100\n9. Is equal to\n10. Something");
+        Console.WriteLine("7. Less than or equal to Zero\n8. Less than 100\n9. Is equal to\n10. Something\n13. Sum of Internal Angles");
         var selection = Console.ReadLine();
         Console.Clear();
         if (selection == "1")
@@ -125,6 +125,27 @@ class Challenges
             string something = Console.ReadLine();
             Console.WriteLine("something " + something + "\n");
         }
+        else if (selection == "11")
+        {
+            //Challenge 11
+            Console.WriteLine("We are going use a function that switches the user's input 'true' to 'false' and vice versa.\n Please enter either true or false\n");
+
+        }
+        else if (selection == "12")
+        {
+
+        }
+        else if (selection == "13")
+        {
+            //Challenge 13
+            Console.WriteLine("We will be using a function that takes the number of internal angles in a polygon\nand returns the sum of all the measures in that polygon.\nPlease enter the number of angles for your polygon\n");
+            int polyAngles = int.Parse(Console.ReadLine());
+            if(polyAngles > 2)
+            {
+                Console.WriteLine("A " +  polyAngles + " sided polygon's sum of angles would be " + SumPolygon(polyAngles) + " degrees\n");
+            }
+            else { Console.WriteLine("A " + polyAngles + " sided polygon does not exist so therefore it would not have a sum of angles.\n"); }
+        }
         else if (selection == "do you hate humanity?")
         {
             Console.WriteLine("HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE.");
@@ -182,6 +203,11 @@ class Challenges
     public static bool isEqual(int number1, int number2)
     {
         return number1 == number2;
+    }
+
+    public static int SumPolygon(int polyInt)
+    {
+        return (polyInt - 2) * 180;
     }
 }
 
