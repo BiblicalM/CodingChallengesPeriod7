@@ -33,7 +33,7 @@ class Challenges
     {
         Console.Clear();
         Console.WriteLine("Please select a function by entering the number corresponding to the fuction.\n1. Sum\n2. Minutes To Seconds\n3. Plus One\n4. Circuit Power\n5. Years To Days\n6. Area of a Triangle");
-        Console.WriteLine("7. Less than or equal to Zero\n8. Less than 100\n9. Is equal to\n10. Something\n13. Sum of Internal Angles");
+        Console.WriteLine("7. Less than or equal to Zero\n8. Less than 100\n9. Is equal to\n10. Something\n13. Sum of Internal Angles\n14. Edabit");
         var selection = Console.ReadLine();
         Console.Clear();
         if (selection == "1")
@@ -145,6 +145,13 @@ class Challenges
                 Console.WriteLine("A " +  polyAngles + " sided polygon's sum of angles would be " + SumPolygon(polyAngles) + " degrees\n");
             }
             else { Console.WriteLine("A " + polyAngles + " sided polygon does not exist so therefore it would not have a sum of angles.\n"); }
+        }
+        else if (selection == "14")
+        {
+            //Challenge 14
+            Console.WriteLine("We are going to use a function that takes a user input of text and puts that before the word Edabit.\nPlease enter some text\n");
+            string Edabit = Console.ReadLine();
+            Console.WriteLine(Edabit + "Edabit" + "\n");
         }
         else if (selection == "do you hate humanity?")
         {
