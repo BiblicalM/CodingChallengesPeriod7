@@ -34,6 +34,7 @@ class Challenges
         Console.Clear();
         Console.WriteLine("Please select a function by entering the number corresponding to the fuction.\n1. Sum\n2. Minutes To Seconds\n3. Plus One\n4. Circuit Power\n5. Years To Days\n6. Area of a Triangle");
         Console.WriteLine("7. Less than or equal to Zero\n8. Less than 100\n9. Is equal to\n10. Something\n13. Sum of Internal Angles\n14. Edabit");
+        Console.WriteLine("15. Two Booleans");
         var selection = Console.ReadLine();
         Console.Clear();
         if (selection == "1")
@@ -133,7 +134,7 @@ class Challenges
         }
         else if (selection == "12")
         {
-
+            //Challenge 12
         }
         else if (selection == "13")
         {
@@ -152,6 +153,15 @@ class Challenges
             Console.WriteLine("We are going to use a function that takes a user input of text and puts that before the word Edabit.\nPlease enter some text\n");
             string Edabit = Console.ReadLine();
             Console.WriteLine(Edabit + "Edabit" + "\n");
+        }
+        else if (selection == "15")
+        {
+            //Challenge 15
+            Console.WriteLine("We are going to use a function that determines if Boolean A and Boolean B are both true\nand the user will decide whether the booleans are true or not.\nPlease enter true or false for Boolean A\n");
+            bool A = bool.Parse(Console.ReadLine());
+            Console.WriteLine("Got it! Now enter either true or false for Boolean B");
+            bool B = bool.Parse(Console.ReadLine());
+            Console.WriteLine("And(" + A + ", " + B + ") --> " + TwoBoolean(A, B) + "\n");
         }
         else if (selection == "do you hate humanity?")
         {
@@ -215,6 +225,11 @@ class Challenges
     public static int SumPolygon(int polyInt)
     {
         return (polyInt - 2) * 180;
+    }
+
+    public static bool TwoBoolean(bool one, bool two)
+    {
+        return one && two;
     }
 }
 
