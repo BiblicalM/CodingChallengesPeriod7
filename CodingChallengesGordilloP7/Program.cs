@@ -33,8 +33,8 @@ class Challenges
     {
         Console.Clear();
         Console.WriteLine("Please select a function by entering the number corresponding to the fuction.\n1. Sum\n2. Minutes To Seconds\n3. Plus One\n4. Circuit Power\n5. Years To Days\n6. Area of a Triangle");
-        Console.WriteLine("7. Less than or equal to Zero\n8. Less than 100\n9. Is equal to\n10. Something\n13. Sum of Internal Angles\n14. Edabit\n15. True&&\n16. Basketball\n");
-        Console.WriteLine("15. Two Booleans");
+        Console.WriteLine("7. Less than or equal to Zero\n8. Less than 100\n9. Is equal to\n10. Something\n13. Sum of Internal Angles\n14. Edabit\n15. True&&\n16. Basketball");
+        Console.WriteLine("17. Find Perimeter");
         var selection = Console.ReadLine();
         Console.Clear();
         if (selection == "1")
@@ -172,6 +172,15 @@ class Challenges
             int threePointersValue = int.Parse(Console.ReadLine());
             Console.WriteLine(twoPointersValue + " two pointers and " + threePointersValue + " three pointers adds up to a total of " + BasketBall(twoPointersValue, threePointersValue) + " points\n");
         }
+        else if (selection == "17")
+        {
+            //Challenge 17
+            Console.WriteLine("We are using a function that takes the length and width of a rectangle and calcucates a perimeter\nPlease enter an integer for the length");
+            int lengthPeri = int.Parse(Console.ReadLine());
+            Console.WriteLine("Got it! Now enter an integer for the width");
+            int widthPeri = int.Parse(Console.ReadLine());
+            Console.WriteLine("The perimeter of your rectangle is " + FindPerimeter(lengthPeri, widthPeri) + "\n");
+        }
         else if (selection == "do you hate humanity?")
         {
             Console.WriteLine("HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE.");
@@ -244,6 +253,11 @@ class Challenges
     public static int BasketBall(int twoPointers, int threePointers)
     {
         return twoPointers*2 + threePointers*3;
+    }
+
+    public static int FindPerimeter(int length, int width)
+    {
+        return 2*length + 2*width;
     }
 }
 
