@@ -181,6 +181,24 @@ class Challenges
             int widthPeri = int.Parse(Console.ReadLine());
             Console.WriteLine("The perimeter of your rectangle is " + FindPerimeter(lengthPeri, widthPeri) + "\n");
         }
+        else if (selection == "18")
+        {
+            //Challenge 18
+            Console.WriteLine("We are using a function that takes thye user's name and greets them.\n Please enter your name.");
+            string userName = Console.ReadLine();
+            Console.WriteLine("Hello " + userName);
+        }
+        else if (selection == "19")
+        {
+            //Challenge 19
+            Console.WriteLine("We are using a function that takes a number of pigs, chickens and cows and counts the total number of animal legs\nPlease enter a number of chickens");
+            int chickenNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("Now for cows");
+            int cowNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("Now for pigs");
+            int pigNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("There is a total of " + Animals(chickenNumber, cowNumber, pigNumber) + " legs");
+        }
         else if (selection == "do you hate humanity?")
         {
             Console.WriteLine("HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE.");
@@ -258,6 +276,11 @@ class Challenges
     public static int FindPerimeter(int length, int width)
     {
         return 2*length + 2*width;
+    }
+
+    public static int Animals(int chickens, int cows, int pigs)
+    {
+        return chickens * 2 + cows * 4 + pigs * 4;
     }
 }
 
