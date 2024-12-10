@@ -280,7 +280,11 @@ class Challenges
 
     public static int Animals(int chickens, int cows, int pigs)
     {
-        return chickens * 2 + cows * 4 + pigs * 4;
+        if (chickens * 2 + cows * 4 + pigs * 4 < 0)
+        {
+            return 0;
+        }
+        else { return chickens * 2 + cows * 4 + pigs * 4; }
     }
 }
 
