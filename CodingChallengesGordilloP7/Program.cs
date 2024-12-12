@@ -10,21 +10,21 @@ class Challenges
 
     public static void Main(string[] args)
     {
-        
+
         //Welcome the user to my program
         Console.WriteLine("Welcome to my coding challenge program. I will be making a variety of functions for you to use.\nPlease pick one");
         MenuSelect();
-        
+
         ////////////////////////////////////////////////
-        
-        
-        
 
-        
 
-        
 
-        
+
+
+
+
+
+
 
 
     }
@@ -34,7 +34,7 @@ class Challenges
         Console.Clear();
         Console.WriteLine("Please select a function by entering the number corresponding to the fuction.\n1. Sum\n2. Minutes To Seconds\n3. Plus One\n4. Circuit Power\n5. Years To Days\n6. Area of a Triangle");
         Console.WriteLine("7. Less than or equal to Zero\n8. Less than 100\n9. Is equal to\n10. Something\n13. Sum of Internal Angles\n14. Edabit\n15. True&&\n16. Basketball");
-        Console.WriteLine("17. Find Perimeter");
+        Console.WriteLine("17. Find Perimeter\n18. Hello User\n19. Animals\n20. Football Points");
         var selection = Console.ReadLine();
         Console.Clear();
         if (selection == "1")
@@ -141,9 +141,9 @@ class Challenges
             //Challenge 13
             Console.WriteLine("We will be using a function that takes the number of internal angles in a polygon\nand returns the sum of all the measures in that polygon.\nPlease enter the number of angles for your polygon\n");
             int polyAngles = int.Parse(Console.ReadLine());
-            if(polyAngles > 2)
+            if (polyAngles > 2)
             {
-                Console.WriteLine("A " +  polyAngles + " sided polygon's sum of angles would be " + SumPolygon(polyAngles) + " degrees\n");
+                Console.WriteLine("A " + polyAngles + " sided polygon's sum of angles would be " + SumPolygon(polyAngles) + " degrees\n");
             }
             else { Console.WriteLine("A " + polyAngles + " sided polygon does not exist so therefore it would not have a sum of angles.\n"); }
         }
@@ -202,7 +202,13 @@ class Challenges
         else if (selection == "20")
         {
             //Challenge 20
-            Console.WriteLine("We are using a function that takes the number of wins, draws and and losses and calculates the number of points a football team has obtained so far.\n");
+            Console.WriteLine("We are using a function that takes the number of wins, draws and and losses and calculates the number of points a football team has obtained so far.\n Please enter a number for wins");
+            int footballWins = int.Parse(Console.ReadLine());
+            Console.WriteLine("Got it! Now give me a number for draws");
+            int footballDraws = int.Parse(Console.ReadLine());
+            Console.WriteLine("Got it! Now give me a number for losses");
+            int footballLosses = int.Parse(Console.ReadLine());
+            Console.WriteLine(FootballPoints(footballWins, footballDraws, footballLosses));
         }
         else if (selection == "do you hate humanity?")
         {
@@ -230,7 +236,7 @@ class Challenges
 
     public static int PlusOne(int number3)
     {
-        return number3 +=1;
+        return number3 += 1;
     }
 
     public static int CircuitPower(int voltage, int current)
@@ -275,12 +281,12 @@ class Challenges
 
     public static int BasketBall(int twoPointers, int threePointers)
     {
-        return twoPointers*2 + threePointers*3;
+        return twoPointers * 2 + threePointers * 3;
     }
 
     public static int FindPerimeter(int length, int width)
     {
-        return 2*length + 2*width;
+        return 2 * length + 2 * width;
     }
 
     public static int Animals(int chickens, int cows, int pigs)
@@ -291,6 +297,14 @@ class Challenges
         }
         else { return chickens * 2 + cows * 4 + pigs * 4; }
     }
-}
 
+    public static string FootballPoints(int wins, int draws, int losses)
+    {
+        if (wins < 0) { wins = 0; }
+        if (draws < 0) { draws = 0; }
+        if (losses < 0) { losses = 0; }
+        int points = wins * 3 + draws;
+        return "Football(" + wins + ", " + draws + ", " + losses + ") --> " + points;
+    }
+}
 
