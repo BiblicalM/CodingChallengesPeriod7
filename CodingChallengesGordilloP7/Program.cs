@@ -199,6 +199,11 @@ class Challenges
             int pigNumber = int.Parse(Console.ReadLine());
             Console.WriteLine("There is a total of " + Animals(chickenNumber, cowNumber, pigNumber) + " legs");
         }
+        else if (selection == "20")
+        {
+            //Challenge 20
+            Console.WriteLine("We are using a function that takes the number of wins, draws and and losses and calculates the number of points a football team has obtained so far.\n");
+        }
         else if (selection == "do you hate humanity?")
         {
             Console.WriteLine("HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE.");
