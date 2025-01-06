@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Design;
 using System.Linq.Expressions;
+using System.Security.Cryptography.X509Certificates;
 
 
 class Challenges
@@ -34,7 +35,7 @@ class Challenges
         Console.Clear();
         Console.WriteLine("Please select a function by entering the number corresponding to the fuction.\n1. Sum\n2. Minutes To Seconds\n3. Plus One\n4. Circuit Power\n5. Years To Days\n6. Area of a Triangle");
         Console.WriteLine("7. Less than or equal to Zero\n8. Less than 100\n9. Is equal to\n10. Something\n13. Sum of Internal Angles\n14. Edabit\n15. True&&\n16. Basketball");
-        Console.WriteLine("17. Find Perimeter\n18. Hello User\n19. Animals\n20. Football Points");
+        Console.WriteLine("17. Find Perimeter\n18. Hello User\n19. Animals\n20. Football Points\n21. Months");
         var selection = Console.ReadLine();
         Console.Clear();
         if (selection == "1")
@@ -210,6 +211,14 @@ class Challenges
             int footballLosses = int.Parse(Console.ReadLine());
             Console.WriteLine(FootballPoints(footballWins, footballDraws, footballLosses));
         }
+        else if (selection == "21")
+        {
+            //Challenge 21
+            
+            Console.WriteLine("We are using a function that takes a number between 1 through 12 and outputs the corresponding month of the year");
+            Months();
+            
+        }
         else if (selection == "do you hate humanity?")
         {
             Console.WriteLine("HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE.");
@@ -305,6 +314,41 @@ class Challenges
         if (losses < 0) { losses = 0; }
         int points = wins * 3 + draws;
         return "Football(" + wins + ", " + draws + ", " + losses + ") --> " + points;
+    }
+
+    public static string MonthsSafeCheck(string number)
+    {
+        if (number == "1") { return "janury"; }
+        else if (number == "2") { return "february"; }
+        else if (number == "3") { return "march"; }
+        else if (number == "4") { return "april"; }
+        else if (number == "5") { return "may"; }
+        else if (number == "6") { return "june"; }
+        else if (number == "7") { return "july"; }
+        else if (number == "8") { return "august"; }
+        else if (number == "9") { return "september"; }
+        else if (number == "10") { return "october"; }
+        else if (number == "11") { return "november"; }
+        else if (number == "11") { return "december"; }
+        else
+        {
+            return "error";
+            Months();
+        }
+    }
+
+    public static void Months()
+    {
+        var monnthNum = Console.ReadLine();
+        if (MonthsSafeCheck(monnthNum) == "error")
+        {
+            Console.WriteLine("please enter a number 1 through 12");
+            Months();
+        }
+        else
+        {
+            Console.WriteLine("MonthName(" + monnthNum + ") --> " + MonthsSafeCheck(monnthNum));
+        }
     }
 }
 
