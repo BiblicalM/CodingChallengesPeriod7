@@ -35,7 +35,7 @@ class Challenges
         Console.Clear();
         Console.WriteLine("Please select a function by entering the number corresponding to the fuction.\n1. Sum\n2. Minutes To Seconds\n3. Plus One\n4. Circuit Power\n5. Years To Days\n6. Area of a Triangle");
         Console.WriteLine("7. Less than or equal to Zero\n8. Less than 100\n9. Is equal to\n10. Something\n13. Sum of Internal Angles\n14. Edabit\n15. True&&\n16. Basketball");
-        Console.WriteLine("17. Find Perimeter\n18. Hello User\n19. Animals\n20. Football Points\n21. Months\n22. Array Sort\n24. Exponent");
+        Console.WriteLine("17. Find Perimeter\n18. Hello User\n19. Animals\n20. Football Points\n21. Months\n22. Array Sort\n24. Exponent\n27. Name Shuffle");
         var selection = Console.ReadLine();
         Console.Clear();
         if (selection == "1")
@@ -214,10 +214,10 @@ class Challenges
         else if (selection == "21")
         {
             //Challenge 21
-            
+
             Console.WriteLine("We are using a function that takes a number between 1 through 12 and outputs the corresponding month of the year");
             Months();
-            
+
         }
         else if (selection == "22")
         {
@@ -227,11 +227,11 @@ class Challenges
             int[] arrayNumbers = new int[arrayLength];
             for (int i = 0; i < arrayLength; i++)
             {
-                Console.WriteLine("Please enter an integer for number " + (i+1) + " of the list");
+                Console.WriteLine("Please enter an integer for number " + (i + 1) + " of the list");
                 arrayNumbers[i] = int.Parse(Console.ReadLine());
             }
             Array.Sort(arrayNumbers);
-            Console.WriteLine("The minimun and maximum of the array is [" + arrayNumbers[0] + ", " + arrayNumbers[arrayNumbers.Length-1] + "]");
+            Console.WriteLine("The minimun and maximum of the array is [" + arrayNumbers[0] + ", " + arrayNumbers[arrayNumbers.Length - 1] + "]");
         }
         else if (selection == "24")
         {
@@ -241,6 +241,13 @@ class Challenges
             Console.WriteLine("Got it! Now give me an integer for the exponment.");
             int exPowerInt = int.Parse(Console.ReadLine());
             Console.WriteLine("\nThe result is " + Exponent(basePowerInt, exPowerInt));
+        }
+        else if (selection == "27")
+        {
+            //Challenge 27
+            Console.WriteLine("We are using a function that takes a first and last name with one space between them exactly.\nPlease enter a first and last name with one space exactly.");
+            string[] FirstNLast = NameSplit(Console.ReadLine());
+            Console.WriteLine(FirstNLast[0] + " " + FirstNLast[1] + "   turns into   " + FirstNLast[1] + " " + FirstNLast[0]);
         }
         else if (selection == "do you hate humanity?")
         {
@@ -377,6 +384,11 @@ class Challenges
     public static int Exponent(int n, int m)
     {
         return (int)Math.Pow(n, m);
+    }
+
+    public static string[] NameSplit(string name)
+    {
+        return name.Split(' ');
     }
 }
 
