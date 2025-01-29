@@ -36,6 +36,7 @@ class Challenges
         Console.WriteLine("Please select a function by entering the number corresponding to the fuction.\n1. Sum\n2. Minutes To Seconds\n3. Plus One\n4. Circuit Power\n5. Years To Days\n6. Area of a Triangle");
         Console.WriteLine("7. Less than or equal to Zero\n8. Less than 100\n9. Is equal to\n10. Something\n13. Sum of Internal Angles\n14. Edabit\n15. True&&\n16. Basketball");
         Console.WriteLine("17. Find Perimeter\n18. Hello User\n19. Animals\n20. Football Points\n21. Months\n22. Array Sort\n24. Exponent\n27. Name Shuffle\n28. Smaller Number");
+        Console.WriteLine("29. Factorial");
         var selection = Console.ReadLine();
         Console.Clear();
         if (selection == "1")
@@ -258,6 +259,13 @@ class Challenges
             int smallNumB = int.Parse(Console.ReadLine());
             Console.WriteLine("The smaller number is " + SmallerNum(smallNumA, smallNumB));
         }
+        else if (selection == "29")
+        {
+            //Challenge 29
+            Console.WriteLine("We are using a function that takes an integer and returns the factorial.\nPlease enter an integer.");
+            int factorial = int.Parse(Console.ReadLine());
+            Console.WriteLine("The factorial of " + factorial + " is " + Factorial(factorial));
+        }
         else if (selection == "do you hate humanity?")
         {
             Console.WriteLine("HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE.");
@@ -404,6 +412,15 @@ class Challenges
     {
         if (a < b) { return a; }
         else { return b; }
+    }
+
+    public static int Factorial(int n)
+    {
+        for (int i = n-1; i > 0; i--)
+        {
+            n *= i;
+        }
+        return n;
     }
 }
 
