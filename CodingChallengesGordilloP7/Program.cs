@@ -36,7 +36,7 @@ class Challenges
         Console.WriteLine("Please select a function by entering the number corresponding to the fuction.\n1. Sum\n2. Minutes To Seconds\n3. Plus One\n4. Circuit Power\n5. Years To Days\n6. Area of a Triangle");
         Console.WriteLine("7. Less than or equal to Zero\n8. Less than 100\n9. Is equal to\n10. Something\n13. Sum of Internal Angles\n14. Edabit\n15. True&&\n16. Basketball");
         Console.WriteLine("17. Find Perimeter\n18. Hello User\n19. Animals\n20. Football Points\n21. Months\n22. Array Sort\n24. Exponent\n27. Name Shuffle\n28. Smaller Number");
-        Console.WriteLine("29. Factorial");
+        Console.WriteLine("29. Factorial\n30. Count vowels");
         var selection = Console.ReadLine();
         Console.Clear();
         if (selection == "1")
@@ -266,6 +266,13 @@ class Challenges
             int factorial = int.Parse(Console.ReadLine());
             Console.WriteLine("The factorial of " + factorial + " is " + Factorial(factorial));
         }
+        else if (selection == "30")
+        {
+            //Challenge 30
+            Console.WriteLine("We are using a function that takes a string and returns the number of vowels within that string.\nPlease enter a string of text.");
+            var vowelCount = Console.ReadLine();
+            Console.WriteLine("That sentence contains " + CountVowels(vowelCount) + " vowels");
+        }
         else if (selection == "do you hate humanity?")
         {
             Console.WriteLine("HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE.");
@@ -421,6 +428,16 @@ class Challenges
             n *= i;
         }
         return n;
+    }
+
+    public static int CountVowels(string text)
+    {
+        int a  = text.Count(x => x == 'a');
+        int e = text.Count(x => x == 'e');
+        int i = text.Count(x => x == 'i');
+        int o = text.Count(x => x == 'o');
+        int u = text.Count(x => x == 'u');
+        return a + e + i + o + u;
     }
 }
 
